@@ -15,7 +15,7 @@
             "component": "Processor",
             "metadata": {
                 "label": "Processor",
-                "x": 1008,
+                "x": 1260,
                 "y": 216,
                 "width": 72,
                 "height": 72
@@ -135,8 +135,18 @@
             "component": "gegl/vignette",
             "metadata": {
                 "label": "gegl/vignette",
-                "x": 864,
+                "x": 1080,
                 "y": 216,
+                "width": 72,
+                "height": 96
+            }
+        },
+        "gegl/box-blur_44ibr": {
+            "component": "gegl/box-blur",
+            "metadata": {
+                "label": "gegl/box-blur",
+                "x": 900,
+                "y": 252,
                 "width": 72,
                 "height": 72
             }
@@ -274,9 +284,23 @@
                 "port": "output"
             },
             "tgt": {
+                "process": "gegl/box-blur_44ibr",
+                "port": "input"
+            },
+            "metadata": {
+                "route": null
+            }
+        },
+        {
+            "src": {
+                "process": "gegl/box-blur_44ibr",
+                "port": "output"
+            },
+            "tgt": {
                 "process": "gegl/vignette_3qyqy",
                 "port": "input"
-            }
+            },
+            "metadata": {}
         },
         {
             "data": 0,
@@ -412,13 +436,6 @@
             }
         },
         {
-            "data": "#37ead3",
-            "tgt": {
-                "process": "gegl/color_oc2g5",
-                "port": "value"
-            }
-        },
-        {
             "data": 2.44,
             "tgt": {
                 "process": "gegl/brightness-contrast_hamiz",
@@ -528,6 +545,20 @@
             "tgt": {
                 "process": "gegl/vignette_3qyqy",
                 "port": "gamma"
+            }
+        },
+        {
+            "data": "#ea37cf",
+            "tgt": {
+                "process": "gegl/color_oc2g5",
+                "port": "value"
+            }
+        },
+        {
+            "data": 11,
+            "tgt": {
+                "process": "gegl/box-blur_44ibr",
+                "port": "radius"
             }
         }
     ]
