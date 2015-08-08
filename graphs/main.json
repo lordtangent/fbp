@@ -15,7 +15,7 @@
             "component": "Processor",
             "metadata": {
                 "label": "Processor",
-                "x": 900,
+                "x": 828,
                 "y": 216,
                 "width": 72,
                 "height": 72
@@ -25,8 +25,8 @@
             "component": "gegl/crop",
             "metadata": {
                 "label": "gegl/crop",
-                "x": 468,
-                "y": 108,
+                "x": 144,
+                "y": 180,
                 "width": 72,
                 "height": 72
             }
@@ -35,8 +35,8 @@
             "component": "gegl/perlin-noise",
             "metadata": {
                 "label": "gegl/perlin-noise",
-                "x": 288,
-                "y": 108,
+                "x": 36,
+                "y": 180,
                 "width": 72,
                 "height": 72
             }
@@ -45,8 +45,8 @@
             "component": "gegl/crop",
             "metadata": {
                 "label": "gegl/crop",
-                "x": 468,
-                "y": 288,
+                "x": 144,
+                "y": 324,
                 "width": 72,
                 "height": 72
             }
@@ -55,8 +55,8 @@
             "component": "gegl/cell-noise",
             "metadata": {
                 "label": "gegl/cell-noise",
-                "x": 288,
-                "y": 288,
+                "x": 36,
+                "y": 324,
                 "width": 72,
                 "height": 72
             }
@@ -65,8 +65,8 @@
             "component": "gegl/multiply",
             "metadata": {
                 "label": "gegl/multiply",
-                "x": 612,
-                "y": 216,
+                "x": 288,
+                "y": 324,
                 "width": 72,
                 "height": 72
             }
@@ -75,8 +75,8 @@
             "component": "gegl/multiply",
             "metadata": {
                 "label": "gegl/multiply",
-                "x": 792,
-                "y": 144,
+                "x": 432,
+                "y": 324,
                 "width": 72,
                 "height": 72
             }
@@ -85,7 +85,7 @@
             "component": "gegl/color",
             "metadata": {
                 "label": "gegl/color",
-                "x": 576,
+                "x": 144,
                 "y": 36,
                 "width": 72,
                 "height": 72
@@ -95,8 +95,48 @@
             "component": "gegl/crop",
             "metadata": {
                 "label": "gegl/crop",
-                "x": 684,
+                "x": 288,
+                "y": 72,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "gegl/brightness-contrast_hamiz": {
+            "component": "gegl/brightness-contrast",
+            "metadata": {
+                "label": "gegl/brightness-contrast",
+                "x": 576,
+                "y": 396,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "gegl/gamma_y0lrp": {
+            "component": "gegl/gamma",
+            "metadata": {
+                "label": "gegl/gamma",
+                "x": 576,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "gegl/png-load_liplm": {
+            "component": "gegl/png-load",
+            "metadata": {
+                "label": "gegl/png-load",
+                "x": 36,
                 "y": 36,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "gegl/multiply_qtexx": {
+            "component": "gegl/multiply",
+            "metadata": {
+                "label": "gegl/multiply",
+                "x": 720,
+                "y": 216,
                 "width": 72,
                 "height": 72
             }
@@ -164,17 +204,6 @@
         },
         {
             "src": {
-                "process": "gegl/multiply_5e3yj",
-                "port": "output"
-            },
-            "tgt": {
-                "process": "Processor_m5aed",
-                "port": "input"
-            },
-            "metadata": {}
-        },
-        {
-            "src": {
                 "process": "gegl/color_oc2g5",
                 "port": "output"
             },
@@ -194,6 +223,54 @@
             "tgt": {
                 "process": "gegl/multiply_5e3yj",
                 "port": "aux"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "gegl/multiply_5e3yj",
+                "port": "output"
+            },
+            "tgt": {
+                "process": "gegl/brightness-contrast_hamiz",
+                "port": "input"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "gegl/multiply_5e3yj",
+                "port": "output"
+            },
+            "tgt": {
+                "process": "gegl/gamma_y0lrp",
+                "port": "input"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "gegl/multiply_qtexx",
+                "port": "output"
+            },
+            "tgt": {
+                "process": "Processor_m5aed",
+                "port": "input"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "gegl/gamma_y0lrp",
+                "port": "output"
+            },
+            "tgt": {
+                "process": "gegl/multiply_qtexx",
+                "port": "input"
             },
             "metadata": {}
         },
@@ -348,6 +425,48 @@
             "data": "#37ead3",
             "tgt": {
                 "process": "gegl/color_oc2g5",
+                "port": "value"
+            }
+        },
+        {
+            "data": 2.44,
+            "tgt": {
+                "process": "gegl/brightness-contrast_hamiz",
+                "port": "contrast"
+            }
+        },
+        {
+            "data": 0.74,
+            "tgt": {
+                "process": "gegl/brightness-contrast_hamiz",
+                "port": "brightness"
+            }
+        },
+        {
+            "data": "",
+            "tgt": {
+                "process": "gegl/png-load_liplm",
+                "port": "path"
+            }
+        },
+        {
+            "data": "http://ibl-tools.github.io/rawtohdri/data/unicorn.png",
+            "tgt": {
+                "process": "gegl/png-load_liplm",
+                "port": "uri"
+            }
+        },
+        {
+            "data": 1.48,
+            "tgt": {
+                "process": "gegl/gamma_y0lrp",
+                "port": "value"
+            }
+        },
+        {
+            "data": 3.94,
+            "tgt": {
+                "process": "gegl/multiply_qtexx",
                 "port": "value"
             }
         }
