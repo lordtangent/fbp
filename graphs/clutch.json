@@ -1,0 +1,13 @@
+{
+    "properties": {
+        "name": "clutch",
+        "environment": {
+            "type": "imgflo"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {},
+    "connections": []
+}
