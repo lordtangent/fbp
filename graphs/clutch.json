@@ -1,6 +1,6 @@
 {
     "properties": {
-        "name": "main",
+        "name": "clutch",
         "environment": {
             "type": "imgflo"
         },
@@ -95,8 +95,8 @@
             "component": "gegl/crop",
             "metadata": {
                 "label": "gegl/crop",
-                "x": 288,
-                "y": 72,
+                "x": 252,
+                "y": 36,
                 "width": 72,
                 "height": 72
             }
@@ -121,16 +121,6 @@
                 "height": 72
             }
         },
-        "gegl/png-load_liplm": {
-            "component": "gegl/png-load",
-            "metadata": {
-                "label": "gegl/png-load",
-                "x": 360,
-                "y": -72,
-                "width": 72,
-                "height": 72
-            }
-        },
         "gegl/multiply_qtexx": {
             "component": "gegl/multiply",
             "metadata": {
@@ -148,7 +138,7 @@
                 "x": 864,
                 "y": 216,
                 "width": 72,
-                "height": 96
+                "height": 72
             }
         }
     },
@@ -161,8 +151,7 @@
             "tgt": {
                 "process": "gegl/crop_vcyr2",
                 "port": "input"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -172,8 +161,7 @@
             "tgt": {
                 "process": "gegl/crop_16urg",
                 "port": "input"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -196,8 +184,7 @@
             "tgt": {
                 "process": "gegl/multiply_arkim",
                 "port": "input"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -233,8 +220,7 @@
             "tgt": {
                 "process": "gegl/multiply_5e3yj",
                 "port": "aux"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -257,8 +243,7 @@
             "tgt": {
                 "process": "gegl/gamma_y0lrp",
                 "port": "input"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -268,8 +253,7 @@
             "tgt": {
                 "process": "gegl/multiply_qtexx",
                 "port": "input"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -292,8 +276,7 @@
             "tgt": {
                 "process": "gegl/vignette_3qyqy",
                 "port": "input"
-            },
-            "metadata": {}
+            }
         },
         {
             "data": 0,
@@ -447,20 +430,6 @@
             "tgt": {
                 "process": "gegl/brightness-contrast_hamiz",
                 "port": "brightness"
-            }
-        },
-        {
-            "data": "",
-            "tgt": {
-                "process": "gegl/png-load_liplm",
-                "port": "path"
-            }
-        },
-        {
-            "data": "http://ibl-tools.github.io/rawtohdri/data/unicorn.png",
-            "tgt": {
-                "process": "gegl/png-load_liplm",
-                "port": "uri"
             }
         },
         {
