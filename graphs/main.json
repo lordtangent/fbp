@@ -1,0 +1,15 @@
+{
+    "properties": {
+        "name": "main",
+        "environment": {
+            "type": "imgflo"
+        },
+        "description": "Clutch Work Flow Demo",
+        "icon": "Film"
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {},
+    "connections": []
+}
