@@ -15,7 +15,7 @@
             "component": "Processor",
             "metadata": {
                 "label": "Processor",
-                "x": 828,
+                "x": 1008,
                 "y": 216,
                 "width": 72,
                 "height": 72
@@ -35,7 +35,7 @@
             "component": "gegl/perlin-noise",
             "metadata": {
                 "label": "gegl/perlin-noise",
-                "x": 36,
+                "x": -36,
                 "y": 180,
                 "width": 72,
                 "height": 72
@@ -125,8 +125,8 @@
             "component": "gegl/png-load",
             "metadata": {
                 "label": "gegl/png-load",
-                "x": 36,
-                "y": 36,
+                "x": 360,
+                "y": -72,
                 "width": 72,
                 "height": 72
             }
@@ -139,6 +139,16 @@
                 "y": 216,
                 "width": 72,
                 "height": 72
+            }
+        },
+        "gegl/vignette_3qyqy": {
+            "component": "gegl/vignette",
+            "metadata": {
+                "label": "gegl/vignette",
+                "x": 864,
+                "y": 216,
+                "width": 72,
+                "height": 96
             }
         }
     },
@@ -252,7 +262,18 @@
         },
         {
             "src": {
+                "process": "gegl/gamma_y0lrp",
+                "port": "output"
+            },
+            "tgt": {
                 "process": "gegl/multiply_qtexx",
+                "port": "input"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "gegl/vignette_3qyqy",
                 "port": "output"
             },
             "tgt": {
@@ -260,16 +281,16 @@
                 "port": "input"
             },
             "metadata": {
-                "route": 0
+                "route": null
             }
         },
         {
             "src": {
-                "process": "gegl/gamma_y0lrp",
+                "process": "gegl/multiply_qtexx",
                 "port": "output"
             },
             "tgt": {
-                "process": "gegl/multiply_qtexx",
+                "process": "gegl/vignette_3qyqy",
                 "port": "input"
             },
             "metadata": {}
@@ -300,20 +321,6 @@
             "tgt": {
                 "process": "gegl/crop_vcyr2",
                 "port": "height"
-            }
-        },
-        {
-            "data": 4.7,
-            "tgt": {
-                "process": "gegl/perlin-noise_5zh7e",
-                "port": "scale"
-            }
-        },
-        {
-            "data": 4,
-            "tgt": {
-                "process": "gegl/perlin-noise_5zh7e",
-                "port": "n"
             }
         },
         {
@@ -468,6 +475,90 @@
             "tgt": {
                 "process": "gegl/multiply_qtexx",
                 "port": "value"
+            }
+        },
+        {
+            "data": "#000000ff",
+            "tgt": {
+                "process": "gegl/vignette_3qyqy",
+                "port": "color"
+            }
+        },
+        {
+            "data": 1.2,
+            "tgt": {
+                "process": "gegl/vignette_3qyqy",
+                "port": "radius"
+            }
+        },
+        {
+            "data": 0,
+            "tgt": {
+                "process": "gegl/vignette_3qyqy",
+                "port": "squeeze"
+            }
+        },
+        {
+            "data": 0.5,
+            "tgt": {
+                "process": "gegl/vignette_3qyqy",
+                "port": "x"
+            }
+        },
+        {
+            "data": 0.5,
+            "tgt": {
+                "process": "gegl/vignette_3qyqy",
+                "port": "y"
+            }
+        },
+        {
+            "data": 0,
+            "tgt": {
+                "process": "gegl/vignette_3qyqy",
+                "port": "rotation"
+            }
+        },
+        {
+            "data": "circle",
+            "tgt": {
+                "process": "gegl/vignette_3qyqy",
+                "port": "shape"
+            }
+        },
+        {
+            "data": 3.6,
+            "tgt": {
+                "process": "gegl/vignette_3qyqy",
+                "port": "softness"
+            }
+        },
+        {
+            "data": 3,
+            "tgt": {
+                "process": "gegl/perlin-noise_5zh7e",
+                "port": "n"
+            }
+        },
+        {
+            "data": 3.13,
+            "tgt": {
+                "process": "gegl/perlin-noise_5zh7e",
+                "port": "scale"
+            }
+        },
+        {
+            "data": -0.54,
+            "tgt": {
+                "process": "gegl/vignette_3qyqy",
+                "port": "proportion"
+            }
+        },
+        {
+            "data": 2.09,
+            "tgt": {
+                "process": "gegl/vignette_3qyqy",
+                "port": "gamma"
             }
         }
     ]
