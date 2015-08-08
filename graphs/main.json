@@ -15,7 +15,7 @@
             "component": "Processor",
             "metadata": {
                 "label": "Processor",
-                "x": 756,
+                "x": 900,
                 "y": 216,
                 "width": 72,
                 "height": 72
@@ -35,7 +35,7 @@
             "component": "gegl/perlin-noise",
             "metadata": {
                 "label": "gegl/perlin-noise",
-                "x": 324,
+                "x": 288,
                 "y": 108,
                 "width": 72,
                 "height": 72
@@ -67,6 +67,36 @@
                 "label": "gegl/multiply",
                 "x": 612,
                 "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "gegl/multiply_5e3yj": {
+            "component": "gegl/multiply",
+            "metadata": {
+                "label": "gegl/multiply",
+                "x": 792,
+                "y": 144,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "gegl/color_oc2g5": {
+            "component": "gegl/color",
+            "metadata": {
+                "label": "gegl/color",
+                "x": 576,
+                "y": 36,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "gegl/crop_pczig": {
+            "component": "gegl/crop",
+            "metadata": {
+                "label": "gegl/crop",
+                "x": 684,
+                "y": 36,
                 "width": 72,
                 "height": 72
             }
@@ -125,12 +155,47 @@
                 "port": "output"
             },
             "tgt": {
-                "process": "Processor_m5aed",
+                "process": "gegl/multiply_5e3yj",
                 "port": "input"
             },
             "metadata": {
                 "route": null
             }
+        },
+        {
+            "src": {
+                "process": "gegl/multiply_5e3yj",
+                "port": "output"
+            },
+            "tgt": {
+                "process": "Processor_m5aed",
+                "port": "input"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "gegl/color_oc2g5",
+                "port": "output"
+            },
+            "tgt": {
+                "process": "gegl/crop_pczig",
+                "port": "input"
+            },
+            "metadata": {
+                "route": null
+            }
+        },
+        {
+            "src": {
+                "process": "gegl/crop_pczig",
+                "port": "output"
+            },
+            "tgt": {
+                "process": "gegl/multiply_5e3yj",
+                "port": "aux"
+            },
+            "metadata": {}
         },
         {
             "data": 0,
@@ -256,6 +321,34 @@
             "tgt": {
                 "process": "gegl/cell-noise_aq8gf",
                 "port": "scale"
+            }
+        },
+        {
+            "data": 1,
+            "tgt": {
+                "process": "gegl/multiply_5e3yj",
+                "port": "value"
+            }
+        },
+        {
+            "data": 800,
+            "tgt": {
+                "process": "gegl/crop_pczig",
+                "port": "width"
+            }
+        },
+        {
+            "data": 600,
+            "tgt": {
+                "process": "gegl/crop_pczig",
+                "port": "height"
+            }
+        },
+        {
+            "data": "#37ead3",
+            "tgt": {
+                "process": "gegl/color_oc2g5",
+                "port": "value"
             }
         }
     ]
