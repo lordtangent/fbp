@@ -15,7 +15,7 @@
             "component": "Processor",
             "metadata": {
                 "label": "Processor",
-                "x": 1368,
+                "x": 1548,
                 "y": 216,
                 "width": 72,
                 "height": 72
@@ -135,7 +135,7 @@
             "component": "gegl/vignette",
             "metadata": {
                 "label": "gegl/vignette",
-                "x": 1152,
+                "x": 1404,
                 "y": 216,
                 "width": 72,
                 "height": 96
@@ -146,6 +146,16 @@
             "metadata": {
                 "label": "gegl/box-blur",
                 "x": 900,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "gegl/rotate_j40mp": {
+            "component": "gegl/rotate",
+            "metadata": {
+                "label": "gegl/rotate",
+                "x": 1116,
                 "y": 252,
                 "width": 72,
                 "height": 72
@@ -306,6 +316,19 @@
         {
             "src": {
                 "process": "gegl/box-blur_44ibr",
+                "port": "output"
+            },
+            "tgt": {
+                "process": "gegl/rotate_j40mp",
+                "port": "input"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "gegl/rotate_j40mp",
                 "port": "output"
             },
             "tgt": {
@@ -573,6 +596,34 @@
             "tgt": {
                 "process": "gegl/vignette_3qyqy",
                 "port": "softness"
+            }
+        },
+        {
+            "data": 0,
+            "tgt": {
+                "process": "gegl/rotate_j40mp",
+                "port": "origin-x"
+            }
+        },
+        {
+            "data": 0,
+            "tgt": {
+                "process": "gegl/rotate_j40mp",
+                "port": "origin-y"
+            }
+        },
+        {
+            "data": "nohalo",
+            "tgt": {
+                "process": "gegl/rotate_j40mp",
+                "port": "sampler"
+            }
+        },
+        {
+            "data": 45,
+            "tgt": {
+                "process": "gegl/rotate_j40mp",
+                "port": "degrees"
             }
         }
     ]
