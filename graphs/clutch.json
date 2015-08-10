@@ -15,7 +15,7 @@
             "component": "Processor",
             "metadata": {
                 "label": "Processor",
-                "x": 1260,
+                "x": 1368,
                 "y": 216,
                 "width": 72,
                 "height": 72
@@ -55,7 +55,7 @@
             "component": "gegl/cell-noise",
             "metadata": {
                 "label": "gegl/cell-noise",
-                "x": 36,
+                "x": -36,
                 "y": 324,
                 "width": 72,
                 "height": 72
@@ -105,7 +105,7 @@
             "component": "gegl/brightness-contrast",
             "metadata": {
                 "label": "gegl/brightness-contrast",
-                "x": 576,
+                "x": 684,
                 "y": 396,
                 "width": 72,
                 "height": 72
@@ -135,7 +135,7 @@
             "component": "gegl/vignette",
             "metadata": {
                 "label": "gegl/vignette",
-                "x": 1080,
+                "x": 1152,
                 "y": 216,
                 "width": 72,
                 "height": 96
@@ -161,6 +161,9 @@
             "tgt": {
                 "process": "gegl/crop_vcyr2",
                 "port": "input"
+            },
+            "metadata": {
+                "route": 4
             }
         },
         {
@@ -171,6 +174,9 @@
             "tgt": {
                 "process": "gegl/crop_16urg",
                 "port": "input"
+            },
+            "metadata": {
+                "route": 4
             }
         },
         {
@@ -183,7 +189,7 @@
                 "port": "aux"
             },
             "metadata": {
-                "route": 0
+                "route": 4
             }
         },
         {
@@ -194,6 +200,9 @@
             "tgt": {
                 "process": "gegl/multiply_arkim",
                 "port": "input"
+            },
+            "metadata": {
+                "route": 4
             }
         },
         {
@@ -206,7 +215,7 @@
                 "port": "input"
             },
             "metadata": {
-                "route": null
+                "route": 4
             }
         },
         {
@@ -219,7 +228,7 @@
                 "port": "input"
             },
             "metadata": {
-                "route": null
+                "route": 4
             }
         },
         {
@@ -230,6 +239,9 @@
             "tgt": {
                 "process": "gegl/multiply_5e3yj",
                 "port": "aux"
+            },
+            "metadata": {
+                "route": 4
             }
         },
         {
@@ -300,7 +312,9 @@
                 "process": "gegl/vignette_3qyqy",
                 "port": "input"
             },
-            "metadata": {}
+            "metadata": {
+                "route": null
+            }
         },
         {
             "data": 0,
@@ -450,20 +464,6 @@
             }
         },
         {
-            "data": 1.48,
-            "tgt": {
-                "process": "gegl/gamma_y0lrp",
-                "port": "value"
-            }
-        },
-        {
-            "data": 3.94,
-            "tgt": {
-                "process": "gegl/multiply_qtexx",
-                "port": "value"
-            }
-        },
-        {
             "data": "#000000ff",
             "tgt": {
                 "process": "gegl/vignette_3qyqy",
@@ -513,13 +513,6 @@
             }
         },
         {
-            "data": 3.6,
-            "tgt": {
-                "process": "gegl/vignette_3qyqy",
-                "port": "softness"
-            }
-        },
-        {
             "data": 3,
             "tgt": {
                 "process": "gegl/perlin-noise_5zh7e",
@@ -541,24 +534,45 @@
             }
         },
         {
-            "data": 2.09,
-            "tgt": {
-                "process": "gegl/vignette_3qyqy",
-                "port": "gamma"
-            }
-        },
-        {
-            "data": "#ea37cf",
+            "data": "#87b1f8",
             "tgt": {
                 "process": "gegl/color_oc2g5",
                 "port": "value"
             }
         },
         {
-            "data": 11,
+            "data": 2.48,
+            "tgt": {
+                "process": "gegl/gamma_y0lrp",
+                "port": "value"
+            }
+        },
+        {
+            "data": 11.79,
+            "tgt": {
+                "process": "gegl/multiply_qtexx",
+                "port": "value"
+            }
+        },
+        {
+            "data": 4,
             "tgt": {
                 "process": "gegl/box-blur_44ibr",
                 "port": "radius"
+            }
+        },
+        {
+            "data": 2.63,
+            "tgt": {
+                "process": "gegl/vignette_3qyqy",
+                "port": "gamma"
+            }
+        },
+        {
+            "data": 3.65,
+            "tgt": {
+                "process": "gegl/vignette_3qyqy",
+                "port": "softness"
             }
         }
     ]
