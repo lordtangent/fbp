@@ -101,16 +101,6 @@
                 "height": 72
             }
         },
-        "gegl/brightness-contrast_hamiz": {
-            "component": "gegl/brightness-contrast",
-            "metadata": {
-                "label": "gegl/brightness-contrast",
-                "x": 684,
-                "y": 396,
-                "width": 72,
-                "height": 72
-            }
-        },
         "gegl/gamma_y0lrp": {
             "component": "gegl/gamma",
             "metadata": {
@@ -242,19 +232,6 @@
             },
             "metadata": {
                 "route": 4
-            }
-        },
-        {
-            "src": {
-                "process": "gegl/multiply_5e3yj",
-                "port": "output"
-            },
-            "tgt": {
-                "process": "gegl/brightness-contrast_hamiz",
-                "port": "input"
-            },
-            "metadata": {
-                "route": 0
             }
         },
         {
@@ -450,20 +427,6 @@
             }
         },
         {
-            "data": 2.44,
-            "tgt": {
-                "process": "gegl/brightness-contrast_hamiz",
-                "port": "contrast"
-            }
-        },
-        {
-            "data": 0.74,
-            "tgt": {
-                "process": "gegl/brightness-contrast_hamiz",
-                "port": "brightness"
-            }
-        },
-        {
             "data": "#000000ff",
             "tgt": {
                 "process": "gegl/vignette_3qyqy",
@@ -555,13 +518,6 @@
             }
         },
         {
-            "data": 4,
-            "tgt": {
-                "process": "gegl/box-blur_44ibr",
-                "port": "radius"
-            }
-        },
-        {
             "data": 2.63,
             "tgt": {
                 "process": "gegl/vignette_3qyqy",
@@ -573,6 +529,13 @@
             "tgt": {
                 "process": "gegl/vignette_3qyqy",
                 "port": "softness"
+            }
+        },
+        {
+            "data": "10",
+            "tgt": {
+                "process": "gegl/box-blur_44ibr",
+                "port": "radius"
             }
         }
     ]
