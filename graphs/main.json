@@ -2,303 +2,103 @@
     "properties": {
         "name": "main",
         "environment": {
-            "type": "noflo-browser",
-            "content": "<div class='area' title='.area'><img id='clock' src='http://i.meemoo.me/v1/in/GJPUFPc8ThuRp9itdXC9_clock-face.png' style='position:absolute; width:300px; height:300px;' /><img id='hours' src='http://i.meemoo.me/v1/in/fRL213GT1uCRltIqXkK2_clock-hours.png' style='position:absolute; top:50px; left:130px; height:200px;' /><img id='minutes' src='http://i.meemoo.me/v1/in/23DZFKYoRTOIAjPA7sed_clock-minutes.png' style='position:absolute; top:0; left:140px; height:300px;' /><img id='seconds' src='http://i.meemoo.me/v1/in/VU2HqPmuTqucRpnUGGBj_clock-seconds.png' style='position:absolute; top:0; left:145px; height:300px;' /></div>",
-            "width": 300,
-            "height": 300
-        },
-        "description": "Clutch Work Flow Demo",
-        "icon": "Film"
+            "type": "imgflo"
+        }
     },
     "inports": {},
     "outports": {},
     "groups": [],
     "processes": {
-        "getTimezoneOffset": {
-            "component": "objects/CallMethod",
+        "gegl/grid_lxkfo": {
+            "component": "gegl/grid",
             "metadata": {
-                "x": 414,
-                "y": 627,
+                "label": "gegl/grid",
+                "x": 828,
+                "y": -1008,
                 "width": 72,
-                "height": 72,
-                "label": "getTimezoneOffset"
+                "height": 72
             }
         },
-        "makeTimezoneAngle": {
-            "component": "math/Divide",
+        "Processor_g53xg": {
+            "component": "Processor",
             "metadata": {
-                "x": 621,
-                "y": 625,
+                "label": "Processor",
+                "x": 1440,
+                "y": -1044,
                 "width": 72,
-                "height": 72,
-                "label": "makeTimezoneAngle"
+                "height": 72
             }
         },
-        "fixHourAngle": {
-            "component": "math/Add",
+        "gegl/crop_g7kqp": {
+            "component": "gegl/crop",
             "metadata": {
-                "x": 845,
-                "y": 529,
+                "label": "gegl/crop",
+                "x": 1008,
+                "y": -1008,
                 "width": 72,
-                "height": 72,
-                "label": "fixHourAngle"
+                "height": 72
             }
         },
-        "makeHourRotation": {
-            "component": "math/Divide",
+        "gegl/load_fuftj": {
+            "component": "gegl/load",
             "metadata": {
-                "x": 621,
-                "y": 523.5,
+                "label": "gegl/load",
+                "x": 864,
+                "y": -1224,
                 "width": 72,
-                "height": 72,
-                "label": "makeHourRotation"
+                "height": 72
             }
         },
-        "rotateMinuteHand": {
-            "component": "css/RotateElement",
+        "gegl/gaussian-blur_i0s2i": {
+            "component": "gegl/gaussian-blur",
             "metadata": {
-                "x": 1110,
-                "y": 275,
+                "label": "gegl/gaussian-blur",
+                "x": 1044,
+                "y": -1224,
                 "width": 72,
-                "height": 72,
-                "label": "rotateMinuteHand"
+                "height": 72
             }
         },
-        "rotateHourHand": {
-            "component": "css/RotateElement",
+        "svg/src-over_xxb3e": {
+            "component": "svg/src-over",
             "metadata": {
-                "x": 1116,
-                "y": 428,
+                "label": "svg/src-over",
+                "x": 1296,
+                "y": -1044,
                 "width": 72,
-                "height": 72,
-                "label": "rotateHourHand"
+                "height": 72
             }
         },
-        "getSecondHand": {
-            "component": "dom/GetElement",
+        "gegl/cell-noise_i755u": {
+            "component": "gegl/cell-noise",
             "metadata": {
-                "x": 849,
-                "y": 100,
+                "label": "gegl/cell-noise",
+                "x": 828,
+                "y": -828,
                 "width": 72,
-                "height": 72,
-                "label": "getSecondHand"
+                "height": 72
             }
         },
-        "getMinuteHand": {
-            "component": "dom/GetElement",
+        "gegl/crop_wzt0m": {
+            "component": "gegl/crop",
             "metadata": {
-                "x": 854,
-                "y": 259,
+                "label": "gegl/crop",
+                "x": 1008,
+                "y": -828,
                 "width": 72,
-                "height": 72,
-                "label": "getMinuteHand"
-            }
-        },
-        "getHourHand": {
-            "component": "dom/GetElement",
-            "metadata": {
-                "x": 841,
-                "y": 416,
-                "width": 72,
-                "height": 72,
-                "label": "getHourHand"
-            }
-        },
-        "makeSecondRotation": {
-            "component": "math/Divide",
-            "metadata": {
-                "x": 615,
-                "y": 170,
-                "width": 72,
-                "height": 72,
-                "label": "makeSecondRotation"
-            }
-        },
-        "rotateSecondHand": {
-            "component": "css/RotateElement",
-            "metadata": {
-                "x": 1105,
-                "y": 117,
-                "width": 72,
-                "height": 72,
-                "label": "rotateSecondHand"
-            }
-        },
-        "split": {
-            "component": "core/Split",
-            "metadata": {
-                "x": 36,
-                "y": 396,
-                "width": 72,
-                "height": 72,
-                "label": "split"
-            }
-        },
-        "secondTick": {
-            "component": "core/RunInterval",
-            "metadata": {
-                "x": -288,
-                "y": 396,
-                "width": 72,
-                "height": 72,
-                "label": "secondTick"
-            }
-        },
-        "startClock": {
-            "component": "core/Repeat",
-            "metadata": {
-                "x": -468,
-                "y": 396,
-                "width": 72,
-                "height": 72,
-                "label": "startClock"
-            }
-        },
-        "createDate": {
-            "component": "objects/CreateDate",
-            "metadata": {
-                "x": -144,
-                "y": 396,
-                "width": 72,
-                "height": 72,
-                "label": "createDate"
-            }
-        },
-        "makeMinuteRotation": {
-            "component": "math/Divide",
-            "metadata": {
-                "x": 617,
-                "y": 325,
-                "width": 72,
-                "height": 72,
-                "label": "makeMinuteRotation"
+                "height": 72
             }
         }
     },
     "connections": [
         {
             "src": {
-                "process": "createDate",
-                "port": "out"
+                "process": "gegl/load_fuftj",
+                "port": "output"
             },
             "tgt": {
-                "process": "split",
-                "port": "in"
-            }
-        },
-        {
-            "src": {
-                "process": "split",
-                "port": "out"
-            },
-            "tgt": {
-                "process": "makeSecondRotation",
-                "port": "dividend"
-            },
-            "metadata": {
-                "route": 1
-            }
-        },
-        {
-            "src": {
-                "process": "getSecondHand",
-                "port": "element"
-            },
-            "tgt": {
-                "process": "rotateSecondHand",
-                "port": "element"
-            }
-        },
-        {
-            "src": {
-                "process": "makeSecondRotation",
-                "port": "quotient"
-            },
-            "tgt": {
-                "process": "rotateSecondHand",
-                "port": "percent"
-            },
-            "metadata": {
-                "route": 1
-            }
-        },
-        {
-            "src": {
-                "process": "split",
-                "port": "out"
-            },
-            "tgt": {
-                "process": "makeMinuteRotation",
-                "port": "dividend"
-            },
-            "metadata": {
-                "route": 5
-            }
-        },
-        {
-            "src": {
-                "process": "split",
-                "port": "out"
-            },
-            "tgt": {
-                "process": "makeHourRotation",
-                "port": "dividend"
-            },
-            "metadata": {
-                "route": 10
-            }
-        },
-        {
-            "src": {
-                "process": "getMinuteHand",
-                "port": "element"
-            },
-            "tgt": {
-                "process": "rotateMinuteHand",
-                "port": "element"
-            }
-        },
-        {
-            "src": {
-                "process": "makeMinuteRotation",
-                "port": "quotient"
-            },
-            "tgt": {
-                "process": "rotateMinuteHand",
-                "port": "percent"
-            },
-            "metadata": {
-                "route": 5
-            }
-        },
-        {
-            "src": {
-                "process": "getHourHand",
-                "port": "element"
-            },
-            "tgt": {
-                "process": "rotateHourHand",
-                "port": "element"
-            }
-        },
-        {
-            "src": {
-                "process": "secondTick",
-                "port": "out"
-            },
-            "tgt": {
-                "process": "createDate",
-                "port": "in"
-            }
-        },
-        {
-            "src": {
-                "process": "split",
-                "port": "out"
-            },
-            "tgt": {
-                "process": "getTimezoneOffset",
-                "port": "in"
+                "process": "gegl/gaussian-blur_i0s2i",
+                "port": "input"
             },
             "metadata": {
                 "route": 0
@@ -306,128 +106,268 @@
         },
         {
             "src": {
-                "process": "getTimezoneOffset",
-                "port": "out"
+                "process": "gegl/cell-noise_i755u",
+                "port": "output"
             },
             "tgt": {
-                "process": "makeTimezoneAngle",
-                "port": "dividend"
-            }
+                "process": "gegl/crop_wzt0m",
+                "port": "input"
+            },
+            "metadata": {}
         },
         {
             "src": {
-                "process": "makeHourRotation",
-                "port": "quotient"
+                "process": "gegl/grid_lxkfo",
+                "port": "output"
             },
             "tgt": {
-                "process": "fixHourAngle",
-                "port": "augend"
+                "process": "gegl/crop_g7kqp",
+                "port": "input"
             },
             "metadata": {
-                "route": 10
+                "route": null
             }
         },
         {
             "src": {
-                "process": "makeTimezoneAngle",
-                "port": "quotient"
+                "process": "gegl/gaussian-blur_i0s2i",
+                "port": "output"
             },
             "tgt": {
-                "process": "fixHourAngle",
-                "port": "addend"
-            }
-        },
-        {
-            "src": {
-                "process": "fixHourAngle",
-                "port": "sum"
-            },
-            "tgt": {
-                "process": "rotateHourHand",
-                "port": "percent"
+                "process": "svg/src-over_xxb3e",
+                "port": "aux"
             },
             "metadata": {
-                "route": 10
+                "route": null
             }
         },
         {
             "src": {
-                "process": "startClock",
-                "port": "out"
+                "process": "svg/src-over_xxb3e",
+                "port": "output"
             },
             "tgt": {
-                "process": "secondTick",
-                "port": "start"
+                "process": "Processor_g53xg",
+                "port": "input"
+            },
+            "metadata": {
+                "route": null
             }
         },
         {
-            "data": "#hours",
+            "src": {
+                "process": "gegl/crop_wzt0m",
+                "port": "output"
+            },
             "tgt": {
-                "process": "getHourHand",
-                "port": "selector"
+                "process": "svg/src-over_xxb3e",
+                "port": "input"
+            },
+            "metadata": {
+                "route": null
             }
         },
         {
-            "data": "#minutes",
+            "data": 0,
             "tgt": {
-                "process": "getMinuteHand",
-                "port": "selector"
+                "process": "gegl/grid_lxkfo",
+                "port": "x-offset"
             }
         },
         {
-            "data": "#seconds",
+            "data": 0,
             "tgt": {
-                "process": "getSecondHand",
-                "port": "selector"
+                "process": "gegl/grid_lxkfo",
+                "port": "y-offset"
             }
         },
         {
-            "data": 60000,
+            "data": 0,
             "tgt": {
-                "process": "makeSecondRotation",
-                "port": "divisor"
+                "process": "gegl/crop_g7kqp",
+                "port": "x"
             }
         },
         {
-            "data": 3600000,
+            "data": 0,
             "tgt": {
-                "process": "makeMinuteRotation",
-                "port": "divisor"
+                "process": "gegl/crop_g7kqp",
+                "port": "y"
             }
         },
         {
-            "data": 20,
+            "data": 31,
             "tgt": {
-                "process": "secondTick",
-                "port": "interval"
+                "process": "gegl/grid_lxkfo",
+                "port": "x"
             }
         },
         {
-            "data": "getTimezoneOffset",
+            "data": 31,
             "tgt": {
-                "process": "getTimezoneOffset",
-                "port": "method"
+                "process": "gegl/grid_lxkfo",
+                "port": "y"
             }
         },
         {
-            "data": "43200000",
+            "data": "#acacac",
             "tgt": {
-                "process": "makeHourRotation",
-                "port": "divisor"
+                "process": "gegl/grid_lxkfo",
+                "port": "line-color"
             }
         },
         {
-            "data": "-720",
+            "data": "",
             "tgt": {
-                "process": "makeTimezoneAngle",
-                "port": "divisor"
+                "process": "gegl/load_fuftj",
+                "port": "path"
+            }
+        },
+        {
+            "data": "http://ibl-tools.github.io/rawtohdri/data/unicorn.png",
+            "tgt": {
+                "process": "gegl/load_fuftj",
+                "port": "uri"
+            }
+        },
+        {
+            "data": 0.2,
+            "tgt": {
+                "process": "gegl/gaussian-blur_i0s2i",
+                "port": "std-dev-y"
+            }
+        },
+        {
+            "data": 2.64,
+            "tgt": {
+                "process": "gegl/gaussian-blur_i0s2i",
+                "port": "std-dev-x"
             }
         },
         {
             "data": true,
             "tgt": {
-                "process": "startClock",
-                "port": "in"
+                "process": "svg/src-over_xxb3e",
+                "port": "srgb"
+            }
+        },
+        {
+            "data": "fir",
+            "tgt": {
+                "process": "gegl/gaussian-blur_i0s2i",
+                "port": "filter"
+            }
+        },
+        {
+            "data": 500,
+            "tgt": {
+                "process": "gegl/crop_g7kqp",
+                "port": "width"
+            }
+        },
+        {
+            "data": 400,
+            "tgt": {
+                "process": "gegl/crop_g7kqp",
+                "port": "height"
+            }
+        },
+        {
+            "data": "none",
+            "tgt": {
+                "process": "gegl/gaussian-blur_i0s2i",
+                "port": "abyss-policy"
+            }
+        },
+        {
+            "data": false,
+            "tgt": {
+                "process": "gegl/gaussian-blur_i0s2i",
+                "port": "clip-extent"
+            }
+        },
+        {
+            "data": 1,
+            "tgt": {
+                "process": "gegl/cell-noise_i755u",
+                "port": "scale"
+            }
+        },
+        {
+            "data": 2,
+            "tgt": {
+                "process": "gegl/cell-noise_i755u",
+                "port": "shape"
+            }
+        },
+        {
+            "data": 1,
+            "tgt": {
+                "process": "gegl/cell-noise_i755u",
+                "port": "iterations"
+            }
+        },
+        {
+            "data": 2,
+            "tgt": {
+                "process": "gegl/cell-noise_i755u",
+                "port": "seed"
+            }
+        },
+        {
+            "data": 500,
+            "tgt": {
+                "process": "gegl/crop_wzt0m",
+                "port": "width"
+            }
+        },
+        {
+            "data": 400,
+            "tgt": {
+                "process": "gegl/crop_wzt0m",
+                "port": "height"
+            }
+        },
+        {
+            "data": 3,
+            "tgt": {
+                "process": "gegl/cell-noise_i755u",
+                "port": "rank"
+            }
+        },
+        {
+            "data": false,
+            "tgt": {
+                "process": "gegl/cell-noise_i755u",
+                "port": "palettize"
+            }
+        },
+        {
+            "data": 18,
+            "tgt": {
+                "process": "gegl/grid_lxkfo",
+                "port": "line-height"
+            }
+        },
+        {
+            "data": 17,
+            "tgt": {
+                "process": "gegl/grid_lxkfo",
+                "port": "line-width"
+            }
+        },
+        {
+            "data": 0,
+            "tgt": {
+                "process": "gegl/crop_wzt0m",
+                "port": "x"
+            }
+        },
+        {
+            "data": 0,
+            "tgt": {
+                "process": "gegl/crop_wzt0m",
+                "port": "y"
             }
         }
     ]
